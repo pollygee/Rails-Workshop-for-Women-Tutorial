@@ -4,6 +4,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :title
       t.string :author
       t.integer :price_cents
+      t.integer :quantity
       t.timestamps null: false
     end
   end
