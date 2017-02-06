@@ -17,3 +17,16 @@
     <dt>Description</dt>
     <dd><%= @book.description %></dd>
   </dl>
+
+<p> Number of reviews: <%= @book.reviews.count %> </p>
+<ul>
+  <% @book.reviews.each do |review| %>
+    <li> <%= review.body %> </li>
+  <% end %>
+</ul>
+
+  <%= link_to("Edit book", edit_book_path(@book), class: "button") %>
+
+  <%= link_to("Add a Review", new_book_review_path(@book), class: "button") %>
+
+  <%= button_to("Delete Book", book_path(@book), method: :delete, class: "button danger") %>
